@@ -26,4 +26,11 @@ Metadata files stored in Google Sheets can be validated using Keemei ; an open-s
 Once Keemei is installed, in Google Sheets select Add-ons > Keemei > Validate QIIME 2 metadata file to determine whether the metadata file meets the required formatting of QIIME 2.
 ## Importing sequence files and metadata
 
+Data used in QIIME exist as QIIME artifacts and have a *.qza* extension with the exception of the metadata.
+Artifacts are zip files containing data and QIIME2 specific metadata.
+QIIME2 allows ypu to import and export data at any step of the analysis.Before importing the data check whether its paired-end,single-end,multiplexed or demultiplexed.
+Multiplexed data comes as Forward and Reverse reads while demultiplexed occur as one sequence file per sample.
+To import multiple files into QIIME we will need to create a manifest file.
+A manifest file is a tab separated file containing a sample_ID and absolute path.
 ## Quality control
+
