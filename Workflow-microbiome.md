@@ -28,9 +28,30 @@ Once Keemei is installed, in Google Sheets select Add-ons > Keemei > Validate QI
 
 Data used in QIIME exist as QIIME artifacts and have a *.qza* extension with the exception of the metadata.
 Artifacts are zip files containing data and QIIME2 specific metadata.
+
 QIIME2 allows ypu to import and export data at any step of the analysis.Before importing the data check whether its paired-end,single-end,multiplexed or demultiplexed.
 Multiplexed data comes as Forward and Reverse reads while demultiplexed occur as one sequence file per sample.
-To import multiple files into QIIME we will need to create a manifest file.
-A manifest file is a tab separated file containing a sample_ID and absolute path.
+
+To import files into QIIME we will need to create a manifest file.A manifest file is a tab separated file containing a sample_ID and absolute path.
+### Creating a manifest file
+```
+# Add the column header (sample-id and absolute-filepath) to the manifest file
+echo -e "sample-id\tabsolute-filepath" > manifest.tsv
+
+# Using a for loop to add sample-id and absolute path to manifest file.
+for f in 'ls per_sample_FASTQ/81253/*.gz'; do
+n='basename $f';
+echo -e "12802.${n%.fastq.gz}\t$PWD/$f"; done >>
+manifest.tsv
+```
+### Importing data 
+```
+qiime tools import \
+--input-path manifest.tsv \
+--type 'SampleData[SequencesWithQuality]' \
+--input-format SingleEndFastqManifestPhred33V2 \
+--output-path se-demux.qza
+```
 ## Quality control
+
 
