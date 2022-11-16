@@ -53,5 +53,21 @@ qiime tools import \
 --output-path se-demux.qza
 ```
 ## Quality control
-
+Demultiplex artifacts allows you to create an interactive summary of sequences that allows us to assess the overall quality of our reads.
+### Creating summary of demultiplexed artifact
+```
+qiime demux summarize \
+--i-data se-demux.qza \
+--o-visualization se-demux.qzv
+```
+The summary provides information on number of sequences per sample and the distribution of sequence quality score at each position.
+The output ia a .qzv file that can be viewed via the browser by running the following code.
+```
+qiime tools view se-demux.qzv
+```
+### Denoising
+Denoising involves correction of Amplicon sequence errors.QIIME2 offers denoising via DADA2 and Deblur.
+## Taxonomic classification
+## Diversity analysis
+## Phologenetic tree construction
 
