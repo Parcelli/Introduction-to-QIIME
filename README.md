@@ -13,7 +13,7 @@ The tutorial will focus on QIIME2 for microbiome data analysis.
 - Phylogenetic tree generation(bonus)
 
 ## Resources
-To follow through the training you will need QIIME2 installed and have an updated browser e.g Chrome for the visuazlizations of some outputs.
+To follow through the training you will need QIIME2 installed and have an updated browser e.g Chrome for the visualizations of some outputs.
 
 QIIME2 can be installed from this link [QIIME2](https://docs.qiime2.org/)
 
