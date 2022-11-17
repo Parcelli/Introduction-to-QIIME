@@ -21,7 +21,7 @@ head metadata.tsv
 The metadata contains information on: [age at the time of collection, birth mode and diet of the child, the type of DNA sequencing]
 In QIIME2 metadata is usually stored as a TSV file (Tab separated file format).QIIME has a metadata formating requirement that can be checked using Keemei (Rideout et al., 2016)
 #### Validating metadata
-Metadata files stored in Google Sheets can be validated using Keemei ; an open-source Google Sheets plugin available at[Keemei](https://keemei.qiime2.org) 
+Metadata files stored in Google Sheets can be validated using Keemei ; an open-source Google Sheets plugin available at [Keemei](https://keemei.qiime2.org) 
 
 Once Keemei is installed, in Google Sheets select Add-ons > Keemei > Validate QIIME 2 metadata file to determine whether the metadata file meets the required formatting of QIIME 2.
 ## Importing sequence files and metadata
@@ -29,7 +29,7 @@ Once Keemei is installed, in Google Sheets select Add-ons > Keemei > Validate QI
 Data used in QIIME exist as QIIME artifacts and have a *.qza* extension with the exception of the metadata.
 Artifacts are zip files containing data and QIIME2 specific metadata.
 
-QIIME2 allows ypu to import and export data at any step of the analysis.Before importing the data check whether its paired-end,single-end,multiplexed or demultiplexed.
+QIIME2 allows you to import and export data at any step of the analysis.Before importing the data check whether its paired-end,single-end,multiplexed or demultiplexed.
 Multiplexed data comes as Forward and Reverse reads while demultiplexed occur as one sequence file per sample.
 
 To import files into QIIME we will need to create a manifest file.A manifest file is a tab separated file containing a sample_ID and absolute path.
