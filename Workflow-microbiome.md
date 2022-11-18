@@ -113,11 +113,11 @@ qiime feature-table summarize \
 --m-sample-metadata-file metadata.tsv \
 --o-visualization table-deblur.qzv
 ```
-### DADA2
+
 
 
 
 ## Taxonomic classification
 ## Diversity analysis
-## Phologenetic tree construction
+## Phylogenetic tree construction
 
