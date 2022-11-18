@@ -67,9 +67,11 @@ qiime tools view se-demux.qzv
 ```
 ### Denoising
 Denoising involves correction of Amplicon sequence errors.QIIME2 offers denoising via DADA2 and Deblur.
-Deblur
+Deblur uses a precalculated static sequence error profile to associate erroneous sequence reads with true biological sequence from which they were derived. 
+DADA2 creates sequence error profiles on per sample analysis basis.
 ### Deblur
 Deblur denoising is executed in two steps
+
 *Step One : Initial quality filtering based on quality scores
 ```
 qiime quality-filter q-score \
@@ -88,14 +90,17 @@ qiime deblur denoise-16S \
 --o-representative-sequences rep-seqs-deblur.qza \
 --o-table table-deblur.qza
 ```
---p-trim-length parameter is determined from the interactive plots above.It is recommended to set this value to a length where the median quality score begins
-to drop below 30, or 20 if the overall run quality is too low.
+--p-trim-length  option truncates the sequence at position n.The parameter is determined from the interactive plots above.It is recommended to set this value to a length where the median quality score begins to drop below 30, or 20 if the overall run quality is too low.
+
 * Visualization of Deblur statistics
 ```
 qiime deblur visualize-stats \
 --i-deblur-stats deblur-stats.qza \
 --o-visualization deblur-stats.qzv
 ```
+* Visualizing rep-sequences
+```
+
 ### DADA2
 
 
