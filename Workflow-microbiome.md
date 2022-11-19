@@ -1,7 +1,13 @@
 # Microbiome analysis using QIIME2
+QIIME 2 is a powerful microbiome analysis package with a focus on data and analysis transparency. QIIME 2 enables researchers to start an analysis with raw DNA sequence data and finish with publication-quality figures and statistical results.
+QIIME2 is a redesign of QIIME1.It supports end-to-end analysis of microbiome data.
+QIIME2 analysis vary depending on your experimental and data analysis goal.
+
+*Bionformatics workflow
 
 ## Data
-A subset data from the Early Childhood Antibiotics and the Microbiome (ECAM) study will be used.The study tracked microbiome composition and development of 43 infants in the United States from birth to two years of age.
+A subset data from the Early Childhood Antibiotics and the Microbiome (ECAM) study((Bokulich,Chung, et al., 2016) will be used.The study tracked microbiome composition and development of 43 infants in the United States from birth to two years of age.
+
 - Sample: Infant fecal sample
 - Sequence: V4 region of 16s rRNA gene
 - Sequencing platform: Illumina MiSeq
