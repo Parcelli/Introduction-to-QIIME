@@ -3,7 +3,7 @@ This repository will host beginner friendly introduction to QIIME2.
 The tutorial will focus on QIIME2 for microbiome data analysis.
 
 ## Learning Objectives
-- Why QIIME2
+- What is QIIME2
 - How to import data into QIIME2
 - Quality control
 - Denoising
