@@ -19,9 +19,9 @@ QIIME2 can be installed from this link [QIIME2](https://docs.qiime2.org/)
 
 Installing QIIME2 using a Conda Environment
 ```
-wget https://data.qiime2.org/distro/core/qiime2-2022.8-py38-linux-conda.yml
-conda env create -n qiime2-2022.8 --file qiime2-2022.8-py38-linux-conda.yml
-conda activate qiime2-2022.8
+wget https://data.qiime2.org/distro/core/qiime2-2022.2-py38-linux-conda.yml
+conda env create -n qiime2-2022.2 --file qiime2-2022.2-py38-linux-conda.yml
+conda activate qiime2-2022.2
 ```
 To test Installation run 
 ```
