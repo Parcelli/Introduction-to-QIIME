@@ -24,13 +24,13 @@ In microbiome studies sample metadata describes the sample data.It may include i
 ```
 head metadata.tsv
 ```
-The metadata contains information on: [age at the time of collection, birth mode and diet of the child, the type of DNA sequencing]
+The metadata may contain information on: [age at the time of collection, birth mode and diet of the child, the type of DNA sequencing]
 In QIIME2 metadata is usually stored as a TSV file (Tab separated file format).QIIME has a metadata formating requirement that can be checked using Keemei (Rideout et al., 2016)
 #### Validating metadata
 Metadata files stored in Google Sheets can be validated using Keemei ; an open-source Google Sheets plugin available at [Keemei](https://keemei.qiime2.org) 
 
 Once Keemei is installed, in Google Sheets select Add-ons > Keemei > Validate QIIME 2 metadata file to determine whether the metadata file meets the required formatting of QIIME 2.
-## Importing sequence files and metadata
+## Importing data
 
 Data used in QIIME exist as QIIME artifacts and have a *.qza* extension with the exception of the metadata.
 Artifacts are zip files containing data and QIIME2 specific metadata.
