@@ -124,8 +124,9 @@ qiime feature-table summarize \
 ## Diversity analysis
 ## Phylogenetic tree construction
 Microbiome data can analyzed without a phylogenetics tree.However,some diversity analysis methods like Unifrac require one.
-Phylogenetic tree allows us to consider evolutionary relatedness between the DNA sequences
-For this tutorial,we will use the fragment-insertion tree-building method using the sepp action of the q2-fragment-insertion plugin.This method aligns our unknown short fragments to full-length sequences in a known reference database and then places them onto a fixed tree.
+Phylogenetic tree allows us to consider evolutionary relatedness between the DNA sequences.
+For this tutorial,we will use the fragment-insertion tree-building method using the sepp action of the q2-fragment-insertion plugin.
+This method aligns our unknown short fragments to full-length sequences in a known reference database and then places them onto a fixed tree.
 * Download a backbone tree as the base for our features to be inserted onto.
 ```
 #Download Greengenes (16s rRNA) reference database:
@@ -142,6 +143,39 @@ qiime fragment-insertion sepp \
 --o-tree insertion-tree.qza \
 --o-placements insertion-placements.qza
 ```
-The newly formed insertion-tree.qza is stored as a rooted phylogenetic tree.
+The newly formed insertion-tree.qza is stored as a rooted phylogenetic tree.Once the insertion tree is created, you must filter your feature table so that it only
+contains fragments that are in the insertion tree to avoid diversity computational failure.
+* Filter the feature table
+```
+qiime fragment-insertion filter-features \
+--i-table table-deblur.qza \
+--i-tree insertion-tree.qza \
+--o-filtered-table filtered-table-deblur.qza \
+--o-removed-table removed-table.qza
+```
+This command generates two feature tables: 
+*The filtered-tabledeblur.qza - contains only features that are also present in the tree, 
+*removed-table.qza - contains features not present in the tree.
+
+* Visualize the phylogenetic tree
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
