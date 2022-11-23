@@ -119,9 +119,6 @@ qiime feature-table summarize \
 --m-sample-metadata-file metadata.tsv \
 --o-visualization table-deblur.qzv
 ```
-## Taxonomic classification
-
-## Diversity analysis
 ## Phylogenetic tree construction
 Microbiome data can analyzed without a phylogenetics tree.However,some diversity analysis methods like Unifrac require one.
 Phylogenetic tree allows us to consider evolutionary relatedness between the DNA sequences.
@@ -154,10 +151,15 @@ qiime fragment-insertion filter-features \
 --o-removed-table removed-table.qza
 ```
 This command generates two feature tables: 
-*The filtered-tabledeblur.qza - contains only features that are also present in the tree, 
-*removed-table.qza - contains features not present in the tree.
+
+*The filtered-tabledeblur.qza* - contains only features that are also present in the tree, 
+
+*removed-table.qza* - contains features not present in the tree.
 
 * Visualize the phylogenetic tree
+The phylogenetic tree artifact produced can be readily visualized using [q2-empress](https:// github.com/biocore/empress) or iTOL’s (Letunic & Bork, 2019) interactive web-based tool by simply uploading the artifact at [itol](https:// itol.embl.de/ upload.cgi.)
+
+## Taxonomic classification
 
 
 
