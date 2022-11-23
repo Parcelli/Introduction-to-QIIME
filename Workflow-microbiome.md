@@ -157,6 +157,7 @@ This command generates two feature tables:
 *removed-table.qza* - contains features not present in the tree.
 
 * Visualize the phylogenetic tree
+
 The phylogenetic tree artifact produced can be readily visualized using [q2-empress](https:// github.com/biocore/empress) or iTOL’s (Letunic & Bork, 2019) interactive web-based tool by simply uploading the artifact at [itol](https:// itol.embl.de/ upload.cgi.)
 
 ## Taxonomic classification
