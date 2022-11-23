@@ -119,11 +119,29 @@ qiime feature-table summarize \
 --m-sample-metadata-file metadata.tsv \
 --o-visualization table-deblur.qzv
 ```
-
-
-
-
 ## Taxonomic classification
+
 ## Diversity analysis
 ## Phylogenetic tree construction
+Microbiome data can analyzed without a phylogenetics tree.However,some diversity analysis methods like Unifrac require one.
+Phylogenetic tree allows us to consider evolutionary relatedness between the DNA sequences
+For this tutorial,we will use the fragment-insertion tree-building method using the sepp action of the q2-fragment-insertion plugin.This method aligns our unknown short fragments to full-length sequences in a known reference database and then places them onto a fixed tree.
+* Download a backbone tree as the base for our features to be inserted onto.
+```
+#Download Greengenes (16s rRNA) reference database:
+wget \
+-O "sepp-refs-gg-13-8.qza" \
+"https://data.qiime2.org/2022.8/common/sepp-refs-gg-13-8.qza"
+```
+* Create an insertion tree by entering the following commands:
+```
+qiime fragment-insertion sepp \
+--i-representative-sequences rep-seqs-deblur.qza \
+--i-reference-database sepp-refs-gg-13-8.qza \
+--p-threads 4 \
+--o-tree insertion-tree.qza \
+--o-placements insertion-placements.qza
+```
+The newly formed insertion-tree.qza is stored as a rooted phylogenetic tree.
+
 
