@@ -158,11 +158,58 @@ This command generates two feature tables:
 
 * Visualize the phylogenetic tree
 
-The phylogenetic tree artifact produced can be readily visualized using [q2-empress](https:// github.com/biocore/empress) or iTOL’s (Letunic & Bork, 2019) interactive web-based tool by simply uploading the artifact at [itol](https:// itol.embl.de/ upload.cgi.)
+The phylogenetic tree artifact produced can be readily visualized using [q2-empress](https:// github.com/biocore/empress)  
+or iTOL’s (Letunic & Bork, 2019) interactive web-based tool by simply uploading the artifact at [itol](https:// itol.embl.de/ upload.cgi.) 
 
 ## Taxonomic classification
 
+QIIME 2 provides several methods to predict the most likely taxonomic affiliation of our features through the q2-feature-classifier plugin.We will use a Naive Bayes classifier,which must be trained on taxonomically defined reference sequences covering the target region of interest.
+### Bespoke method of training a classifier
+This method requires three files;reference reads, a reference taxonomy, and taxonomic weights.
+* Downloading required files
+```
+wget
+https://github.com/BenKaehler/readytowear/raw/
+master/data/gg_13_8/515f-806r/human-stool.qza
+wget
+https://github.com/BenKaehler/readytowear/raw/
+master/data/gg_13_8/515f-806r/ref-seqs-v4.qza
+wget
+https://github.com/BenKaehler/readytowear/raw/
+master/data/gg_13_8/515f-806r/ref-tax.qza
+```
+* Training a classifier
+```
+qiime feature-classifier fit-classifier-naive-bayes \
+--i-reference-reads ref-seqs-v4.qza \
+--i-reference-taxonomy ref-tax.qza \
+--i-class-weight human-stool.qza \
+--o-classifier gg138_v4_human-stool_classifier.qza
+```
 
+* Performing Taxonomic classification
+```
+qiime feature-classifier classify-sklearn \
+--i-reads rep-seqs-deblur.qza \
+--i-classifier gg138_v4_human-stool_classifier.qza \
+--o-classification bespoke-taxonomy.qza
+```
+* Visualization of taxonomic bars
+```
+qiime metadata tabulate \
+--m-input-file bespoke-taxonomy.qza \
+--m-input-file rep-seqs-deblur.qza \
+--o-visualization bespoke-taxonomy.qzv
+```
+* Generate a taxonomic bar plots
+```
+qiime taxa barplot \
+--i-table filtered-table-deblur.qza \
+--i-taxonomy bespoke-taxonomy.qza \
+--m-metadata-file metadata1.tsv \
+--o-visualization se-bar-plots.qzv
+```
+## Diversity analysis
 
 
 
