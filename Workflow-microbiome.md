@@ -176,7 +176,7 @@ wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806
 * Training a classifier
 ```
 qiime feature-classifier fit-classifier-naive-bayes \
---i-reference-reads ref-seqs-v4.qza \
+--i-reference-reads ref-seqs.qza \
 --i-reference-taxonomy ref-tax.qza \
 --i-class-weight human-stool.qza \
 --o-classifier gg138_v4_human-stool_classifier.qza
