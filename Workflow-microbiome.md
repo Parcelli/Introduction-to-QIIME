@@ -169,15 +169,10 @@ This method requires three files;reference reads, a reference taxonomy, and taxo
 * Downloading required files
 ```
 git clone https://github.com/BenKaehler/readytowear.git
-'''
-*Ignore this bit for now
 ```
-wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806r/human-stool.qza
-wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806r/ref-seqs.qza
-wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806r/ref-tax.qza
 
-```
 * Training a classifier
+
 ```
 qiime feature-classifier fit-classifier-naive-bayes \
   --i-reference-reads readytowear/data/gg_13_8/515f-806r/ref-seqs.qza \
