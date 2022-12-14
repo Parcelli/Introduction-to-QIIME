@@ -198,7 +198,7 @@ qiime metadata tabulate \
 * Generate a taxonomic bar plots
 ```
 qiime taxa barplot \
---i-table filtered-table-deblur.qza \
+--i-table table-deblur.qza \
 --i-taxonomy bespoke-taxonomy.qza \
 --m-metadata-file metadata1.tsv \
 --o-visualization se-bar-plots.qzv
