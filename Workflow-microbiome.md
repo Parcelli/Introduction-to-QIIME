@@ -168,6 +168,10 @@ QIIME 2 provides several methods to predict the most likely taxonomic affiliatio
 This method requires three files;reference reads, a reference taxonomy, and taxonomic weights.
 * Downloading required files
 ```
+git clone https://github.com/BenKaehler/readytowear.git
+'''
+*Ignore this bit for now
+```
 wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806r/human-stool.qza
 wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806r/ref-seqs.qza
 wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806r/ref-tax.qza
@@ -176,10 +180,10 @@ wget https://github.com/BenKaehler/readytowear/blob/master/data/gg_13_8/515f-806
 * Training a classifier
 ```
 qiime feature-classifier fit-classifier-naive-bayes \
---i-reference-reads ref-seqs.qza \
---i-reference-taxonomy ref-tax.qza \
---i-class-weight human-stool.qza \
---o-classifier gg138_v4_human-stool_classifier.qza
+  --i-reference-reads readytowear/data/gg_13_8/515f-806r/ref-seqs.qza \
+  --i-reference-taxonomy readytowear/data/gg_13_8/515f-806r/ref-tax.qza \
+  --i-class-weight readytowear/data/gg_13_8/515f-806r/human-stool.qza \
+  --o-classifier gg138_v4_human-stool_classifier.qza
 ```
 
 * Performing Taxonomic classification
