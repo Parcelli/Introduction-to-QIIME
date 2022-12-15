@@ -204,7 +204,7 @@ qiime taxa barplot \
 --o-visualization se-bar-plots.qzv
 ```
 ## Diversity analysis
-
+Diversity analysis can be performed in R or QIIME2.
 
 
 
