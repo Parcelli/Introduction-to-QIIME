@@ -32,3 +32,6 @@ A basic understand of the commandline is required as the  workflow will be run f
 
 An understanding of NGS technologies would be beneficial.
 ## Reference materials
+Estaki, M., Jiang, L., Bokulich, N. A., McDonald, D., González, A., Kosciolek, T., ... & Knight, R. (2020). QIIME 2 enables comprehensive end‐to‐end analysis of diverse microbiome data and comparative studies with publicly available data. Current protocols in bioinformatics, 70(1), e100.
+<https://doi.org/10.1002/cpbi.100>
+
